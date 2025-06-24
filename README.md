@@ -29,7 +29,8 @@ Options:
   -f,--file=<file>          File to hide
   -i,--in=<input>           Input image (carrier)
   -o,--out=<output>         Output image (or extracted file)
-Python module
+  
+# Python module
 Text encoding:
 
 #encoding
@@ -41,7 +42,8 @@ cv2.imwrite("my_new_image.png", img_encoded)
 im = cv2.imread("my_new_image.png")
 steg = LSBSteg(im)
 print("Text value:",steg.decode_text())
-Image steganography:
+
+# Image steganography:
 
 #encoding
 steg = LSBSteg(cv2.imread("carrier.png")
@@ -52,7 +54,8 @@ cv2.imwrite("new_image.png", new_im)
 steg = LSBSteg("new_image.png")
 orig_im = steg.decode_image()
 cv.SaveImage("recovered.png", orig_im)
-Binary steganography:
+
+# Binary steganography:
 
 #encoding
 steg = LSBSteg(cv2.imread("carrier.png"))
@@ -66,5 +69,5 @@ binary = steg.decode_binary()
 with open("recovered.bin", "rb") as f:
     f.write(data)
     
-License
+# License
 This software is MIT-Licensed.
