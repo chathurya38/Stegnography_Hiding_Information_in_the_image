@@ -14,12 +14,12 @@ LSBSteg module is based on OpenCV to hide data in images. It uses the first bit 
 # Installation
 This tool only require OpenCV and its dependencies.
 
-'''bash
+
 pip install -r requirements.txt
-'''
+
 
 # Usage
-'''bash
+
 LSBSteg.py
 
 Usage:
@@ -32,12 +32,12 @@ Options:
   -f,--file=<file>          File to hide
   -i,--in=<input>           Input image (carrier)
   -o,--out=<output>         Output image (or extracted file)
-  '''
+  
   
 # Python module
 Text encoding:
 
-'''python
+
 #encoding
 
 steg = LSBSteg(cv2.imread("my_image.png"))
@@ -52,7 +52,7 @@ print("Text value:",steg.decode_text())
 
 # Image steganography:
 
-'''python
+
 #encoding
 steg = LSBSteg(cv2.imread("carrier.png")
 new_im = steg.encode_image(cv2.imread("secret_image.jpg"))
@@ -62,11 +62,10 @@ cv2.imwrite("new_image.png", new_im)
 steg = LSBSteg("new_image.png")
 orig_im = steg.decode_image()
 cv.SaveImage("recovered.png", orig_im)
-'''
 
 # Binary steganography:
 
-'''python
+
 #encoding
 steg = LSBSteg(cv2.imread("carrier.png"))
 data = open("my_data.bin", "rb").read()
@@ -79,7 +78,7 @@ binary = steg.decode_binary()
 with open("recovered.bin", "rb") as f:
     f.write(data)
 
-'''
+
     
 # License
 
